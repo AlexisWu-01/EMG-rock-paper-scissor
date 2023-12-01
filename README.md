@@ -38,8 +38,9 @@ I used GridSearchCV to find the best parameters for each model.
 
 All current feature plots: ![feature plots](https://github.com/AlexisWu-01/EMG-rock-paper-scissor/blob/main/feature_plots/all.png?raw=True)
 
+
 | Feature Name | Mathematical Expression | Definition |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 |Root Mean Square|$$RMS = \sqrt{\frac{1}{N}\sum_{i=1}^Nx_i^2}$$ |Calculates the signal's amplitude, reflecting muscle strength.|
 |Median Frequency| N/A, Welch method applied with scipy. | It computes the power spectral density and then find the frequency at which the cumulative power reaches half of the total power.|
 |Peak Frequency| N/A, Welch method applied with scipy.| It is the frequency that corresponds to the maximum value in the power spectral density.|
