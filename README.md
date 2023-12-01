@@ -37,3 +37,11 @@ I used GridSearchCV to find the best parameters for each model.
 2. More features: I think there are still a lot of features that can be extracted from the data. For example, the number of peaks, the time between peaks, the amplitude of the peaks, etc.
 
 All current feature plots: ![feature plots](https://github.com/AlexisWu-01/EMG-rock-paper-scissor/blob/main/feature_plots/all.png?raw=True)
+
+| Feature Name | Mathematical Expression | Definition |
+| --- | --- | --- | --- |
+|Root Mean Square|$$RMS = \sqrt{\frac{1}{N}\sum_{i=1}^Nx_i^2}$$ |Calculates the signal's amplitude, reflecting muscle strength.|
+|Median Frequency| N/A, Welch method applied with scipy. | It computes the power spectral density and then find the frequency at which the cumulative power reaches half of the total power.|
+|Peak Frequency| N/A, Welch method applied with scipy.| It is the frequency that corresponds to the maximum value in the power spectral density.|
+|Hjorth Parameters| $$Activity = VAR = \frac{1}{N}\sum_{i=1}^{N}(x_i-\mu)^2$$ $$Mobility = \sqrt{\frac{VAR(dx)}{VAR(x)}}$$ $$Complexity=\frac{Mobility(dx)}{Mobility(x)}$$|**Mobility** is measure of the mean frequency or the rate of change iof the signal. It reflects the average frequency or the proportion of standard deviation of a signal's power spectrum. **Complexity** compares the mobility of the signal with the mobility of its first derivative. In essence, it indicates the similarity of the waveform of the signal to a pure sine wave, with lower values suggesting a more sine-like (less complex) signal. It is a measure of the change in frequency. A more complex signal, such as one with frequent shifts in frequency, will have a higher complexity value. |
+|Band Power |$$BP = \int_{f_{low}}^{f_high}PSD(f)df$$ where PSD is power spectral density calculated with Welch method.| It integrates the power within the selected frequency band ($f_{low}$ and $f_{high})$|
