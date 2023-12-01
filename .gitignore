@@ -164,6 +164,7 @@ cython_debug/
 /processed_data
 /tune_data_raw
 /tune_data_processed
+/models
 *.pth
 *.html
 *.pkl
